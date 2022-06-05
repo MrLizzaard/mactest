@@ -1,24 +1,15 @@
-import react, { useState } from "react";
-import * as requestServer from "./appCrud";
+import react from "react";
+import Basepage from "./Basepage";
+import Header from "./modules/header/header";
+import Sidebar from "./modules/sidebar/sidebar";
 
 function App() {
-  const [test, setTest] = useState();
-  const onClick = async () => {
-    try {
-      const data = await requestServer.testFetch();
-
-      if (data.data === "success") {
-        setTest("fetch성공");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
   return (
-    <div>
-      <button onClick={onClick}>fetch</button>
-      <div>{test}</div>
-    </div>
+    <>
+      <Header />
+      <Sidebar />
+      <Basepage />
+    </>
   );
 }
 
