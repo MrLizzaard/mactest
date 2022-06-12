@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const apiUrl = `${process.env.REACT_APP_API_URL}`;
+
 export function dbTest() {
-  return axios.get(`http://localhost:3006`);
+  return axios.get(apiUrl + `/getdata`);
 }
